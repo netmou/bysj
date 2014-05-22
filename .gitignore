@@ -1,0 +1,8 @@
+/public/upload/
+/nbproject
+composer.phar
+composer.lock
+.env.local.php
+.env.php
+Thumbs.db
+
