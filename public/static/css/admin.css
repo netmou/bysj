@@ -1,0 +1,184 @@
+/* 
+    Created on : 2014-3-28, 22:35:16
+    Author     : mou
+*/
+
+html,body{
+    background:#e3f1fa; 
+    min-width:1000px;
+    height:100%;
+    overflow: hidden;
+}
+#header{
+    background-image:url('../images/banner-line.jpg'); 
+    position: relative;
+    height:68px;
+}
+#header #user{
+    background-image:url('../images/banner-left.gif');
+    height:63px;
+    width:400px;
+}
+#header #logo{
+    padding:5px;
+}
+#header #menubar{
+    bottom:4px;
+    right:auto;
+    top:auto;
+    left:260px;
+}
+#menu li{
+    margin-left:2px;
+    width:80px;
+    padding:4px;
+    text-align: center;
+    font-size:12px;
+}
+#menu .select{
+    background:none;
+    background-image: url('../images/mod-btn.jpg');
+    background-repeat: no-repeat;
+    padding:5px 5px;
+    font-size:14px;
+}
+#logout{
+    top:10px;
+    right:20px;
+    font-size:16px;
+    color: blue;
+    z-index: 99;
+}
+#logout img{
+    vertical-align: middle;
+}
+#content{
+    height:100%;
+    height:calc(100% - 68px);
+}
+#sidebar{
+    border-top:none;
+    background-color:#e3f1fa;
+    width: 20%;
+    min-width: 200px;
+    height:100%;
+    overflow: hidden;
+}
+#sidebar #submemu{
+    background-color:#3896d1;
+}
+#submemu li{
+    padding:5px;
+    min-width: 60px;
+    text-align: center;
+}
+#submemu .select{
+    background-color: #e3f1fa;
+    border:none
+}
+#sublist{
+    margin:5px 5px;
+    padding:5px;
+    height: 92%;
+    border:solid 1px #45a3de;
+    background: #fff;
+    font-size:14px;
+}
+#sublist ul{
+    display:none;
+}
+#sublist li{
+    margin:5px 5px;
+    padding:5px;
+    list-style: none;
+}
+#sublist .first{
+    display:block;
+}
+#sublist .select{
+    background: #e3f1fa;
+}
+
+#main{
+    background-color:#fff;
+    width:80%;
+    height:100%;
+    padding:0px;
+    overflow: auto;
+}
+#sborder{
+    height:100%; 
+    margin:0px;
+    padding:0px;
+    border-right: 1px #666 solid;
+}
+#mborder{
+    margin:0px;
+    padding:10px;
+    line-height: 30px;
+}
+
+/*********************************for laravel page mark style******************************/
+.pagination{
+    zoom:1;
+}
+.pagination:after{
+    content:".";
+    height:0px;
+    display:block;
+    clear: both;
+    visibility: hidden;
+}
+.pagination li{
+    padding:5px;
+    float: left;
+}
+.pagination .disabled{
+    color:#444;
+}
+.pagination .active{
+    color:red;
+}
+/*********************************below other inner page style*****************************/
+
+.msg{
+    margin:5px;
+    padding:2px 5px;
+    background: #eee;
+}
+.msg .cpt{
+    padding:2px 5px;
+    font-size:14px;
+    color:#444;
+}
+.msg .r{
+    color:green;
+}
+.msg .w{
+    color:red;
+}
+.msg .desc{
+    margin:2px 0px 5px;
+    padding:5px 5px;
+    font-size:14px;
+    color:#444;
+    line-height: 1.8;
+    background: #f6f6f6;
+    word-wrap:break-word;
+}
+.msg .reply{
+    margin:2px 0px 5px 30px;
+    padding:5px 5px;
+    font-size:14px;
+    color:#444;
+    line-height: 1.8;
+    background: #f6f6f6;
+    word-wrap:break-word;
+    border:1px dashed #444;
+}
+
+#reply td{
+    border:none;
+}
+
+
