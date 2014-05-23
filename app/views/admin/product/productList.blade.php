@@ -18,7 +18,7 @@
         第{{$product->getCurrentPage()}}页，每页{{$product->getPerPage()}}篇，共{{$product->getLastPage()}}页
     </span>
     
-    <table width="600">
+    <table width="600" class="anchor">
         <tr>
             <td>标题</td>
             <td>类别</td>

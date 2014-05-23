@@ -25,6 +25,7 @@ td,th{
 }
 .anchor a{
     color:blue;
+    cursor:pointer;
 }
 .cnt{
     margin:0px auto;
@@ -52,7 +53,6 @@ td,th{
 .wrap{
     margin:2px;
 }
-
 
 .head{
     border:1px #ddd solid;

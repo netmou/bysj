@@ -39,7 +39,7 @@ Route::any('admin/system/edit', 'admin\SystemController@edit');
 // route for user
 Route::any('admin/user/create', 'admin\UserController@createUser');
 Route::any('admin/user/cat', 'admin\UserController@showUserList');
-Route::any('admin/user/edit', 'admin\UserController@showUserList');
+Route::any('admin/user/edit', 'admin\UserController@modifyUser');
 
 
 // route for message

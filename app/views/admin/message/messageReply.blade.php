@@ -12,12 +12,12 @@
     <div class="msg">
         <div class="cpt">
             <strong>
-                {{$message->title}}
+                标题：{{$message->title}}
             </strong>
                 [{{$message->date}}]
         </div>
         <div class="desc">
-           {{$message->desc}}
+           客户：{{$message->desc}}
         </div>
     </div>
     <h3>回复内容</h3>
