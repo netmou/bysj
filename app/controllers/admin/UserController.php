@@ -60,7 +60,7 @@ class UserController extends Controller {
                 $update['role'] = addslashes(serialize($role));
                 $update['email'] = Request::input('email');
                 $update['regtime'] = date('Y-m-d h:i:s');
-                DB::table('user')->select('id',$id)->update($update);
+                DB::table('user')->where('id',$id)->update($update);
                 return Redirect::to('admin/operate/succeed')->with(array('target' => 'admin/user/cat'));
             }
             $data = array();

@@ -65,46 +65,30 @@ Route::any('admin/article/edit', 'admin\ArticleController@modifyArticle');
 Route::any('admin/article/modify', 'admin\ArticleController@modifyCategory');
 
 
+// route for article page
+Route::any('message', array('as'=>'index','uses'=>'IndexController@message'));
 
-Route::group(array(), function(){
-	//some share data
-	$cat=array();
-	$channel=DB::table('channel')->select('id')->where('symbol','product')->first();
-	$cat['product']=DB::table('category')->select(array('id','title'))->where('channel',$channel->id)->where('parent',0)->get();
-	$channel=DB::table('channel')->select('id')->where('symbol','article')->first();
-	$cat['article']=DB::table('category')->select(array('id','title'))->where('channel',$channel->id)->where('parent',0)->get();
-	View::share('cat',$cat);
-	$channel=DB::table('channel')->select('id')->where('symbol','about')->first();
-	$channel=DB::table('channel')->select('title','symbol')->where('show','yes')->get();
-	View::share('channel',$channel);
-	$link=DB::table('link')->where('status','show')->get();
-	View::share('link',$link);
-	//end share data
+// route for article page
+Route::any('product', array('as'=>'index','uses'=>'IndexController@product'));
 
-	// route for article page
-	Route::any('message', array('as'=>'index','uses'=>'IndexController@message'));
+// route for article page
+Route::any('product/show', array('as'=>'index','uses'=>'IndexController@showProduct'));
+// route for article page
+Route::any('article', array('as'=>'index','uses'=>'IndexController@article'));
 
-	// route for article page
-	Route::any('product', array('as'=>'index','uses'=>'IndexController@product'));
-
-	// route for article page
-	Route::any('product/show', array('as'=>'index','uses'=>'IndexController@showProduct'));
-	// route for article page
-	Route::any('article', array('as'=>'index','uses'=>'IndexController@article'));
-
-	// route for article page
-	Route::any('article', array('as'=>'index','uses'=>'IndexController@article'));
-    // route for article page
-	Route::any('article/show', array('as'=>'index','uses'=>'IndexController@showArticle'));
-	// route for home page
-	Route::any('index/home', array('as'=>'index','uses'=>'IndexController@init'));
-	// route without action
-	Route::get('index', function(){
-		return Redirect::route('index');
-	});
-	// route for default
-	Route::get('/', function(){
-		return Redirect::route('index');
-	});
+// route for article page
+Route::any('article', array('as'=>'index','uses'=>'IndexController@article'));
+// route for article page
+Route::any('article/show', array('as'=>'index','uses'=>'IndexController@showArticle'));
+// route for home page
+Route::any('index/home', array('as'=>'index','uses'=>'IndexController@init'));
+// route without action
+Route::get('index', function(){
+        return Redirect::route('index');
 });
+// route for default
+Route::get('/', function(){
+        return Redirect::route('index');
+});
+
 

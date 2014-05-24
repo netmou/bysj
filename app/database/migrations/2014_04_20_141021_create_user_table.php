@@ -34,7 +34,7 @@ class CreateUserTable extends Migration {
      		'sex'=>'男',
         	'email'=>'test@sina.com',
         	'pass'=>Hash::make('123'),
-        	'role'=>addslashes(serialize(array(2)))
+        	'role'=>addslashes(serialize(array(1)))
         ));
         DB::table('user')->insert(array(
      		'name'=>'article',
@@ -45,7 +45,7 @@ class CreateUserTable extends Migration {
      		'sex'=>'女',
         	'email'=>'test@sina.com',
         	'pass'=>Hash::make('m12z22q0'),
-        	'role'=>addslashes(serialize(array(2)))
+        	'role'=>addslashes(serialize(array(1)))
         ));
 	}
 
