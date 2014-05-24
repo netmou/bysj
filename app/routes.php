@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -31,22 +30,26 @@ Route::any('admin/login', function(){
 	}
 	return View::make('admin/login');
 });
+Route::any('admin/system', 'admin\SystemController@base');
 Route::any('admin/system/base', 'admin\SystemController@base');
 Route::any('admin/system/nav', 'admin\SystemController@nav');
 Route::any('admin/system/add', 'admin\SystemController@add');
 Route::any('admin/system/edit', 'admin\SystemController@edit');
 
 // route for user
+Route::any('admin/user', 'admin\UserController@showUserList');
 Route::any('admin/user/create', 'admin\UserController@createUser');
 Route::any('admin/user/cat', 'admin\UserController@showUserList');
 Route::any('admin/user/edit', 'admin\UserController@modifyUser');
 
 
 // route for message
+Route::any('admin/message', 'admin\MessageController@showMessageList');
 Route::any('admin/message/list', 'admin\MessageController@showMessageList');
 Route::any('admin/message/answer', 'admin\MessageController@replyMessage');
 
 // route for product
+Route::any('admin/product', 'admin\ProductController@showProductList');
 Route::any('admin/product/list', 'admin\ProductController@showProductList');
 Route::any('admin/product/cat', 'admin\ProductController@addCategory');
 Route::any('admin/product/add', 'admin\ProductController@addProduct');
@@ -54,6 +57,7 @@ Route::any('admin/product/edit', 'admin\ProductController@modifyProduct');
 Route::any('admin/product/modify', 'admin\ProductController@modifyCategory');
 
 // route for article
+Route::any('admin/article', 'admin\ArticleController@showArticleList');
 Route::any('admin/article/list', 'admin\ArticleController@showArticleList');
 Route::any('admin/article/cat', 'admin\ArticleController@addCategory');
 Route::any('admin/article/add', 'admin\ArticleController@addArticle');

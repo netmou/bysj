@@ -15,10 +15,31 @@ class BaseController extends Controller {
 		}
 	}
 	public function __construct(){
-		if(!Session::has('user')&& Request::segment(1, 'admin')=='admin'){
-			$url=URL::to('admin/login');
-			header('Location: '.$url);
-			exit;
-		}
+            if(Request::segment(1)=='admin'){
+                if(!$user=Session::get('user',null)){
+                    $url=URL::to('admin/login');
+                    header('Location: '.$url);
+                    exit;
+                }
+                $info=DB::table('user')->select('role')->where('name',$user)->first();
+                $role=unserialize(stripslashes($info->role));
+                $jump=true;
+                $module=Request::segment(2,'system');
+                foreach($role as $id){
+                    $right=DB::table('role')->select('rights')->where('id',$id)->first();
+                    if($right->rights=='all'||false!==stripos($right->rights,$module)){
+                        $jump=false;
+                        break;
+                    }
+                }
+                if($jump){
+                    $right=DB::table('role')->select('rights')->where('id',$role[0])->first();
+                    $rights=explode("|",$right->rights);
+                    $url= URL::to('admin/'.$rights[0]);
+                    header('Location: '.$url);
+                    exit;
+                }
+                
+            }
 	}
 }

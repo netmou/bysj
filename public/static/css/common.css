@@ -22,6 +22,7 @@ table{
 td,th{
     border:solid 1px #666;
     padding:2px 5px;
+    min-height:18px;
 }
 .anchor a{
     color:blue;
