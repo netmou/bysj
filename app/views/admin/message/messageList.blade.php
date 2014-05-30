@@ -19,7 +19,9 @@
     <div class="msg">
         <div class="cpt">
             <strong>
-                {{$item->title}}
+
+                标题：{{$item->title}}
+
             </strong>
                 [{{$item->date}}]
                 <a class="w" href="?delete={{$item->id}}" onclick="return window.confirm('确定要删除吗？');">删除</a>

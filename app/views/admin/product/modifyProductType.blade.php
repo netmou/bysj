@@ -34,7 +34,14 @@
         <input id="delete" type="button" value="删除分类" />
     </form>
     <script type="text/javascript">
-        var chg=function(){
+
+        var changeType=function(){
+            if($("#ctype option").size()==0){
+                $("#title").val("");
+                $("#symbol").val("");
+                return null;
+            }
+
             var value=$('#ctype').children('option:selected').val();
             $.ajax({
                 data: "typeIndex=" + value,
@@ -48,10 +55,17 @@
                     $("#symbol").val(data.symbol);
                 }
             });
-        }
-        $('#ctype').change(chg);
-        chg();
+
+        };
+        $('#ctype').change(changeType);
         $("input[type='button']").click(function(){
+            if($("#ctype option").size()==0){
+                return null;
+            }
+            if(!window.confirm('确定要删除吗?')){
+                return null;
+            }
+
             var value=$("#ctype option:selected").val();
             $.ajax({   
                 data: "deleteIndex=" + value,
@@ -61,14 +75,13 @@
                 },
                 success:function(){
                     $("#ctype option:selected").remove();
-                    if($("#ctype option").size()!=0){
-                        chg();
-                    }else{
-                        $("#title").val("");
-                        $("#symbol").val("");
-                    }
+
+                    changeType(); 
                 }
             });
         });
+        //init the symbol and title    
+        changeType();   
+
     </script>
 @stop

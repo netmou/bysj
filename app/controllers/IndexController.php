@@ -1,6 +1,23 @@
 <?php
 class IndexController extends BaseController{
 	protected $layout = 'layout';
+
+        public function __construct() {
+            parent::__construct();
+             //share some front data
+            $cat = array();
+            $channel = DB::table('channel')->select('id')->where('symbol', 'product')->first();
+            $cat['product'] = DB::table('category')->select(array('id', 'title'))->where('channel', $channel->id)->where('parent', 0)->get();
+            $channel = DB::table('channel')->select('id')->where('symbol', 'article')->first();
+            $cat['article'] = DB::table('category')->select(array('id', 'title'))->where('channel', $channel->id)->where('parent', 0)->get();
+            View::share('cat', $cat);
+            $channel = DB::table('channel')->select('id')->where('symbol', 'about')->first();
+            $channel = DB::table('channel')->select('title', 'symbol')->where('show', 'yes')->get();
+            View::share('channel', $channel);
+            $link = DB::table('link')->where('status', 'show')->get();
+            View::share('link', $link);
+            //end share data
+        }
 	public function init(){
 		$data=array();
 		$data['product']=DB::table('product')->select(array('id','title','image'))->take(10)->get();

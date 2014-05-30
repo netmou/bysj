@@ -42,10 +42,12 @@
         <br />
         <input name="modify" value="{{$article->id}}" type="hidden" />
         <label for="title">标题：</label>
-        <input id="title" name="title" value="{{$article->title}}" type="text" size="36" />
+
+        <input id="title" name="title" value="{{$article->title}}" type="text" size="24" />
         <br />
-        <label for="author">作者（来源）：</label>
-        <input id="author" name="author" value="{{$article->user}}" type="text" size="18" />
+        <label for="author">作者：</label>
+        <input id="author" name="author" value="{{$article->user}}" type="text" size="24" />（或文章来源）
+
         <br />
         <strong>请填写文章正文</strong>
         <textarea id="article" name="body">{{$article->content}}</textarea>
@@ -53,7 +55,9 @@
         <strong>请填写文章关键字（英文逗号分隔）</strong>
         <br />
         <label for="keyword">关键字：</label>
-        <input id="keyword" name="keyword" value="{{$article->keyword}}" type="text" size="36" />
+
+        <input id="keyword" name="keyword" value="{{$article->keyword}}" type="text" size="24" />
+
         <br />
         <input type="submit" value="保存修改" />
     </form>

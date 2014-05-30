@@ -39,7 +39,9 @@
         </script>
         <br />
         <label for="title">标题：</label>
-        <input id="title" name="title" type="text" value="{{$product->title}}" size="36" />
+
+        <input id="title" name="title" type="text" value="{{$product->title}}" size="24" />
+
         <br />
         <strong>请填写产品规格(双击单元格添加数据)</strong>
         <table id="dynamic">
@@ -146,7 +148,7 @@
         <br />
         <strong>请填写产品描述</strong>
         <textarea id="article" name="body">{{$product->desc}}</textarea>
-        <br />
+
         <input id="addproduct" type="submit" value="保存修改" />
     </form>
 @stop

@@ -36,7 +36,9 @@
         </select>
         <br />
         <label for="title">标题：</label>
-        <input id="title" name="title" type="text" size="36" />
+
+        <input id="title" name="title" type="text" size="24" />
+
         <br />
         <strong>请填写产品规格(双击单元格添加数据)</strong>
         <table id="dynamic">
@@ -141,7 +143,8 @@
         <br />
         <strong>请填写产品描述</strong>
         <textarea id="article" name="body"></textarea>
-        <br />
+
+
         <input id="addproduct" type="submit" value="添加产品" />
     </form>
 @stop

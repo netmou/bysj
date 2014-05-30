@@ -38,10 +38,12 @@
         <strong>请填写文章标题</strong>
         <br />
         <label for="title">标题：</label>
-        <input id="title" name="title" type="text" size="36" />
+
+        <input id="title" name="title" type="text" size="24" />
         <br />
-        <label for="author">作者（来源）：</label>
-        <input id="author" name="author" type="text" size="18" />
+        <label for="author">作者：</label>
+        <input id="author" name="author" type="text" size="24" />（或文章来源）
+
         <br />
         <strong>请填写文章正文</strong>
         <textarea id="article" name="body"></textarea>
@@ -49,7 +51,9 @@
         <strong>请填写文章关键字（英文逗号分隔）</strong>
         <br />
         <label for="keyword">关键字：</label>
-        <input id="keyword" name="keyword" type="text" size="36" />
+
+        <input id="keyword" name="keyword" type="text" size="24" />
+
         <br />
         <input type="submit" value="添加文章" />
     </form>
