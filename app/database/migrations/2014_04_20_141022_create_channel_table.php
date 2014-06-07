@@ -42,13 +42,7 @@ class CreateChannelTable extends Migration {
      		'show'=>'yes',
      		'status'=>'normal'
         ));
-        DB::table('channel')->insert(array(
-     		'title'=>'关于我们',
-            'symbol'=>'about',
-     		'index'=>3,
-     		'show'=>'yes',
-     		'status'=>'normal'
-        ));
+        
 	}
 
 	/**

@@ -7,7 +7,6 @@ use Redirect;
 use View;
 use DB;
 class OperateController extends Controller{
-	protected $layout = 'admin.layout';
 
 	public function succeed(){
 		$target=Session::get('target','target');

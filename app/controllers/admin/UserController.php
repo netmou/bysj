@@ -12,9 +12,6 @@ use App;
 use DB;
 
 class UserController extends Controller {
-
-    protected $layout = 'admin.layout';
-
     public function createUser() {
         if (Request::method() == 'POST') {
             $insert['name'] = Request::input('name');

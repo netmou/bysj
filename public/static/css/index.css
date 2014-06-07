@@ -2,7 +2,7 @@
     width:980px;
 }
 .box{
-    margin:3px 0px;
+    margin:5px 0px;
 }
 #banner{
     font-size:14px;
@@ -61,6 +61,10 @@
 #sidebar{
     width: 250px;
     overflow: hidden;
+}
+#sidebar #notice ul{
+    font-size: 14px;
+    list-style:circle inside;
 }
 
 #listbox dl{
@@ -146,7 +150,10 @@
     padding-left:10px;
     padding-right:10px;
 }
-
+#friend .panel{
+    padding: 5px;
+    text-align: left;
+}
 #footer{
     text-align: center;
     color: #555;
@@ -154,14 +161,41 @@
 #footer a{
     color: #555;
 }
-/*******************************product.page***************************************/
-
-#product img{
-    height:150px;
-    border:1px solid #eee;
+.panel.show{
+    padding-bottom:5px;
+}
+.panel.show h3{
+    margin:5px;
     padding:5px;
 }
-/*******************************note.page***************************************/
+/*******************************product.page***************************************/
+#product span{
+   
+    font-size: 12px;
+    font-weight: bold;
+}
+#product li{
+    margin:5px;
+    text-align: center;
+    border:1px solid #eee;
+}
+#product img{
+    height:150px;
+    padding:5px;
+}
+.product img{
+    max-width: 240px;
+}
+.product{
+    padding:5px;
+}
+.product td{
+    border:#aaa 1px solid;
+    padding:5px 15px;
+}
+
+
+/*******************************message.page***************************************/
 .msg{
     margin:5px;
     background: #eee;

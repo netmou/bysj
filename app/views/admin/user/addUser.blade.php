@@ -14,19 +14,14 @@
         <strong>请选择用户角色类别</strong>
         <br />
         <label for="ctype">角色分类：</label>
-<<<<<<< HEAD
-        <select id="ctype" name="role">
-=======
+
         <select id="ctype" name="role[]"  multiple="multiple">
->>>>>>> dev
+
         @foreach($role as $item)
             <option value="{{$item->id}}">{{$item->title}}</option>
         @endforeach
         </select>
-<<<<<<< HEAD
-=======
         （多选【ctrl+右击】）
->>>>>>> dev
         <br />
         <strong>请填写必填信息</strong>
         <br />

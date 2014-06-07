@@ -37,7 +37,7 @@
                 <td align="center">
                     <input type="reset" value="清空" />
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="submit" value="提交" />
+                    <input type="submit" value="回复" />
                 </td>
             </tr>
         </table>

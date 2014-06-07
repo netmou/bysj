@@ -10,7 +10,6 @@ use App;
 use DB;
 
 class ArticleController extends Controller{
-	protected $layout = 'admin.layout';
 	public function addArticle(){
 		$channel=DB::table('channel')->select('id')->where('symbol','article')->first();
 		if(Request::method()=='POST'){
@@ -21,7 +20,7 @@ class ArticleController extends Controller{
 			$insert['channel']=$channel->id;
 			$insert['category']=Request::input('category');
 			$insert['date']=date('Y-m-d');
-			$insert['user']=Request::input('author');
+			$insert['user']=Request::input('author','本站');
 			DB::table('article')->insert($insert);
 			return Redirect::to('admin/operate/succeed')->with(array('target'=>'admin/article/list'));
 		}
@@ -66,7 +65,7 @@ class ArticleController extends Controller{
 				$update['channel']=$channel->id;
 				$update['category']=Request::input('category');
 				$update['date']=date('Y-m-d');
-				$update['user']=Request::input('author');
+				$update['user']=Request::input('author','本站');
 				DB::table('article')->where('id',$id)->update($update);
 				return Redirect::to('admin/operate/succeed')->with(array('target'=>'admin/article/list'));
 			}

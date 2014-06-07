@@ -2,21 +2,17 @@
 @section('content')
 <div class="box">
     <div class="head">  
-        <div class="cpt">产品外观</div>
+        <div class="cpt">{{$product->title}}外观</div>
     </div>
-    <div class="panel">
-        <ul class="list">
-            <li>
-                <a href="product/show?pid={{$product->id}}"><img src="{{$product->image}}" alt="{{$product->title}}"></a>
-            </li>
-        </ul>
+    <div class="panel product">
+        <img src="{{$product->image}}" alt="{{$product->title}}">
     </div>
 </div>
 <div class="box">
     <div class="head">  
-        <div class="cpt">产品规格</div>
+        <div class="cpt">{{$product->title}}规格</div>
     </div>
-    <div class="panel">
+    <div class="panel product">
         <table id="dynamic">
             @foreach($product->illustrate as $item)
             <tr>
@@ -30,9 +26,9 @@
 </div>
 <div id="product" class="box">
     <div class="head">  
-        <div class="cpt">产品描述</div>
+        <div class="cpt">{{$product->title}}描述</div>
     </div>
-    <div class="panel">
+    <div class="panel product">
         {{$product->desc}}
     </div>
 </div>

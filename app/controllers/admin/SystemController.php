@@ -10,7 +10,6 @@ use App;
 use DB;
 use File;
 class SystemController extends Controller{
-	protected $layout = 'admin.layout';
 	public function base(){
 		if(Request::method()=='POST'){
 			$conf=array();
@@ -20,7 +19,6 @@ class SystemController extends Controller{
 			$conf['icp']=Request::input('icp');
 			$conf['domain']=Request::input('domain');
 			$conf['statistic']=Request::input('statistic');
-			$conf['gonggao']=Request::input('gonggao');
 			$dyanmic=storage_path().'/dyanmic.conf';
 			ob_start();
 			var_export($conf);

@@ -30,7 +30,7 @@
         </tr>
         @foreach($article as $item)
         <tr>
-            <td><a href="?id={{$item->id}}" title='浏览'>{{$item->title}}</a></td>
+            <td><a href="{{URL::to('article/show')}}?art={{$item->id}}" target="_blank" title='浏览'>{{$item->title}}</a></td>
             <td>{{$item->type}}</td>
             <td>{{$item->date}}</td>
             <td>{{$item->user}}</td>

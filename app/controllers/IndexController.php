@@ -11,19 +11,20 @@ class IndexController extends BaseController{
             $channel = DB::table('channel')->select('id')->where('symbol', 'article')->first();
             $cat['article'] = DB::table('category')->select(array('id', 'title'))->where('channel', $channel->id)->where('parent', 0)->get();
             View::share('cat', $cat);
-            $channel = DB::table('channel')->select('id')->where('symbol', 'about')->first();
             $channel = DB::table('channel')->select('title', 'symbol')->where('show', 'yes')->get();
             View::share('channel', $channel);
             $link = DB::table('link')->where('status', 'show')->get();
             View::share('link', $link);
+            $category=DB::table('category')->select('id')->where('symbol', 'gonggao')->first();
+            $gonggao = DB::table('article')->where('category', $category->id)->take(5)->get();
+            View::share('gonggao', $gonggao);
+            View::share('ggc',$category);
             //end share data
         }
 	public function init(){
 		$data=array();
 		$data['product']=DB::table('product')->select(array('id','title','image'))->take(10)->get();
 		$data['article']=DB::table('article')->select('id','title','date')->orderBy('date')->take(10)->get();
-		$channel=DB::table('channel')->select('id')->where('symbol','about')->first();
-		$data['brief']=DB::table('article')->select('content')->where('channel',$channel->id)->get();
 		return View::make('index')->with($data);
 	}
 	public function article(){
@@ -32,10 +33,21 @@ class IndexController extends BaseController{
 		$data['article']=DB::table('article')->where('channel',$channel->id)->get();
 		return View::make('article')->with($data);
 	}
+	public function articleCat(){
+		if ($cat = Request::input('cid', 0)){
+			$data=array();
+			$data['category']=DB::table('category')->where('id',$cat)->first();
+			$data['articles']=DB::table('article')
+			->where('category',$cat)->take(10)->get();
+			return View::make('articleCat')->with($data);
+		}
+		App::abort('500','UNKNONW ERROR');
+	}
 	public function showArticle(){
 		if($art=Request::input('art',0)){
 			$data=array();
-			$data['article']=DB::table('article')->where('id',$art)->first();
+			$data['article']=$article=DB::table('article')->where('id',$art)->first();
+			$data['artc']=DB::table('category')->where('id',$article->category)->first();
 			return View::make('articleShow')->with($data);
 		}
 		App::abort('500','UNKNONW ERROR');
@@ -44,6 +56,16 @@ class IndexController extends BaseController{
 		$data=array();
 		$data['product']=DB::table('product')->select(array('id','title','image'))->take(10)->get();
 		return View::make('product')->with($data);
+	}
+	public function productCat(){
+		if ($cat = Request::input('cid', 0)){
+			$data=array();
+			$data['category']=DB::table('category')->where('id',$cat)->first();
+			$data['products']=DB::table('product')
+			->where('category',$cat)->take(10)->get();
+			return View::make('productCat')->with($data);
+		}
+		App::abort('500','UNKNONW ERROR');
 	}
 	public function showProduct(){
 		if($pid=Request::input('pid',0)){

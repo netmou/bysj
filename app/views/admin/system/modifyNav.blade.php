@@ -24,7 +24,7 @@
    </script>
    <br />
    <input name="modify"type="hidden" value="{{$nav->id}}">
-   链接地址：<input name="url" value="{{$nav->title}}" type="text" size="30"> <br />
+   链接地址：<input name="url" value="{{$nav->url}}" type="text" size="30"> <br />
    链接状态：显示<input name="status" type="radio" checked="checked" value="show">&nbsp;&nbsp;禁用<input name="status" type="radio" value="hidden"> <br />
    <input type="submit" value="保存">
    </form>

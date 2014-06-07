@@ -14,8 +14,6 @@ use Response;
 
 class ProductController extends Controller {
 
-    protected $layout = 'admin.layout';
-
     public function addProduct() {
         $channel = DB::table('channel')->select('id')->where('symbol', 'product')->first();
         if (Request::method() == 'POST') {

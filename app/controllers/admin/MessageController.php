@@ -10,7 +10,6 @@ use App;
 use DB;
 
 class MessageController extends Controller{
-	protected $layout = 'admin.layout';
 	
 	public function showMessageList(){
 		if($id=Request::input('delete',0)){

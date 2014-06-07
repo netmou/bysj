@@ -41,11 +41,20 @@
                     <a href="#"><img src="{{asset('static/images/logo.png')}}" alt="新秀的logo" /></a>
                 </div>
                 <div id="search" class="rgt">
-                    <form id="form" method="post" action="">
+                    <form id="form" action="http://www.baidu.com/baidu" target="_blank">
                         <input type="image" src="{{asset('static/images/search.png')}}" alt="search">
-                        <input name="key" type="text" size="12"/>
-                        <input type="button" value="搜索" />
+                        <input name="word" type="text" size="12"/>
+                        <input type="submit" value="搜索" onclick="innerSite()" />
+                        <input type="hidden" value="utf-8" name="ie">
+                        <input type="hidden" value="3" name="cl">
+                        <input id="search_tn" type="hidden" value="sitehao123" name="tn">
                     </form>
+                    <script type="text/javascript">
+                        function innerSite(){
+                            var value=$("#search input[name='word']").val()+" site:{{Config::get('system.domain')}}"
+                            $("#search input[name='word']").val(value)
+                        }
+                    </script>
                 </div>
             </div>
             <div id="nav">
@@ -74,10 +83,16 @@
                 <div class="box" id="notice">
                     <div class="head">
                         <div class="cpt">站内公告</div>
-                        <div class="more">更多</div>
+                        <div class="more"><a href="article/cat?cid={{$ggc->id}}">更多</a></div>
                     </div>
                     <div class="view">
-                    {{config::get('system.gonggao','没有啊！')}}
+                    <ul>
+                    @foreach($gonggao as $item)
+                        <li>
+                           <a href="article/show?art={{$item->id}}">{{$item->title}}</a> 
+                        </li>
+                    @endforeach
+                    </ul>
                     </div>
                 </div>
                 <div class="box" id="listbox">
@@ -85,17 +100,16 @@
                         <div class="cpt">分类浏览</div>
                     </div>
                     <div class="panel">
-                   
                         <dl>
                             <dt>文章分类</dt>
                              @foreach ($cat['article'] as $element)
-                            <dd><a href="article?cat={{$element->id}}">{{$element->title}}</a></dd>
+                            <a href="article/cat?cid={{$element->id}}"><dd>{{$element->title}}</dd></a>
                              @endforeach
                         </dl>
                         <dl>
                             <dt>产品分类</dt>
                              @foreach ($cat['product'] as $element)
-                            <dd><a href="product?cat={{$element->id}}">{{$element->title}}</a></dd>
+                            <a href="product/cat?cid={{$element->id}}"><dd>{{$element->title}}</dd></a>
                              @endforeach
                         </dl>
                     </div>

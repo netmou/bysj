@@ -19,7 +19,6 @@
         关 键 字：<input name="keyword" type="text" size="30" value="{{Config::get('system.keyword','未设置')}}"/> <br />
         上传目录：{{Config::get('system.upload','未设置')}} <br />
         统计代码：<textarea name="statistic" cols="30" rows="4">{{Config::get('system.statistic','未设置')}}</textarea> <br />
-        站点公告：<textarea name="gonggao" cols="30" rows="4">{{Config::get('system.gonggao','未设置')}}</textarea> <br />
         <input type="submit" value="保存配置" />
     </form>
 @stop

@@ -8,7 +8,10 @@
         <div class="slideTabs clr">
             <ul class="origin">
             @foreach($product as $item)
-                <li><img src="{{$item->image}}" alt="{{$item->title}}"/></li>
+                <li>
+                    <a href="product/show?pid={{$item->id}}"><img src="{{$item->image}}" title="{{$item->title}}" alt="{{$item->title}}"/></a><br />
+                    <span>{{$item->title}}</span>
+                </li>
             @endforeach
             </ul>
             <ul class="clone"><!-- 不能删除的空标签,JS幻灯专用 --></ul>
@@ -23,7 +26,9 @@
         <ul class="list">
         @foreach($product as $item)
             <li>
-                <a href="product/show?pid={{$item->id}}"><img src="{{$item->image}}" alt="{{$item->title}}"><a>
+                <a href="product/show?pid={{$item->id}}"><img src="{{$item->image}}" title="{{$item->title}}" alt="{{$item->title}}"><a>
+                <br />
+                <span>{{$item->title}}</span>
             </li>
         @endforeach
         </ul>

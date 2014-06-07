@@ -32,7 +32,7 @@
         <label for="title">昵称：</label>
         <input id="title" name="name" type="text" size="36" value="{{$user->name}}" /> <br />
         <label for="pass">密码：</label>
-        <input id="pass" name="pass" type="password" size="36" /> <br />
+        <input id="pass" name="pass" type="password" size="36" />【留空不修改密码】 <br />
         <label for="confirm">确认：</label>
         <input id="confirm" name="confirm" type="password" size="36" /> <br />
         <strong>请填写可选信息</strong> <br />

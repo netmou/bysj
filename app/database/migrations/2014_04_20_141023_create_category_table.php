@@ -25,28 +25,13 @@ class CreateCategoryTable extends Migration {
      	//添加测试数据
      	DB::table('category')->insert(array(
      		'parent'=>0,
-     		'channel'=>0,
-     		'title'=>'家用产品',
-     		'symbol'=>'famly',
+     		'channel'=>2,
+     		'title'=>'公告',
+     		'symbol'=>'gonggao',
      		'index'=>0,
      		'status'=>'normal'
         ));
-        DB::table('category')->insert(array(
-     		'parent'=>0,
-     		'channel'=>3,
-     		'title'=>'公司简介',
-     		'symbol'=>'brief',
-     		'index'=>0,
-     		'status'=>'normal'
-        ));
-        DB::table('category')->insert(array(
-     		'parent'=>0,
-     		'channel'=>3,
-     		'title'=>'企业文化',
-     		'symbol'=>'culture',
-     		'index'=>0,
-     		'status'=>'normal'
-        ));
+        
 	}
 
 	/**

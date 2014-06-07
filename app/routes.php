@@ -64,23 +64,16 @@ Route::any('admin/article/add', 'admin\ArticleController@addArticle');
 Route::any('admin/article/edit', 'admin\ArticleController@modifyArticle');
 Route::any('admin/article/modify', 'admin\ArticleController@modifyCategory');
 
+Route::any('message', 'IndexController@message');
 
-// route for article page
-Route::any('message', array('as'=>'index','uses'=>'IndexController@message'));
+Route::any('product', 'IndexController@product');
+Route::any('product/show', 'IndexController@showProduct');
+Route::any('product/cat', 'IndexController@productCat');
 
-// route for article page
-Route::any('product', array('as'=>'index','uses'=>'IndexController@product'));
+Route::any('article', 'IndexController@article');
+Route::any('article/cat', 'IndexController@articleCat');
+Route::any('article/show', 'IndexController@showArticle');
 
-// route for article page
-Route::any('product/show', array('as'=>'index','uses'=>'IndexController@showProduct'));
-// route for article page
-Route::any('article', array('as'=>'index','uses'=>'IndexController@article'));
-
-// route for article page
-Route::any('article', array('as'=>'index','uses'=>'IndexController@article'));
-// route for article page
-Route::any('article/show', array('as'=>'index','uses'=>'IndexController@showArticle'));
-// route for home page
 Route::any('index/home', array('as'=>'index','uses'=>'IndexController@init'));
 // route without action
 Route::get('index', function(){
