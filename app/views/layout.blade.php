@@ -42,9 +42,10 @@
                 </div>
                 <div id="search" class="rgt">
                     <form id="form" action="http://www.baidu.com/baidu" target="_blank">
-                        <input type="image" src="{{asset('static/images/search.png')}}" alt="search">
+                       
                         <input name="word" type="text" size="12"/>
-                        <input type="submit" value="搜索" onclick="innerSite()" />
+                        
+                        <input type="image" src="{{asset('static/images/search.png')}}" onclick="innerSite()" alt="search">
                         <input type="hidden" value="utf-8" name="ie">
                         <input type="hidden" value="3" name="cl">
                         <input id="search_tn" type="hidden" value="sitehao123" name="tn">
@@ -52,7 +53,8 @@
                     <script type="text/javascript">
                         function innerSite(){
                             var value=$("#search input[name='word']").val()+" site:{{Config::get('system.domain')}}"
-                            $("#search input[name='word']").val(value)
+                            $("#search input[name='word']").val(value);
+                            $('form').submit();
                         }
                     </script>
                 </div>
@@ -74,7 +76,7 @@
         
         <div id="light" class="cnt">
             <div id="focus">
-                <img id="image" src="{{asset('static/images/focus1.jpg')}}" alt="focus">
+                <img id="image" src="{{asset('static/images/focus1.jpg')}}" alt="focus" />
             </div>
         </div>
         <div id="main" class="cnt">

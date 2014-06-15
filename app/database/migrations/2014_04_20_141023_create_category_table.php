@@ -19,7 +19,6 @@ class CreateCategoryTable extends Migration {
 	        $table->string('title',64);
 	        $table->string('symbol',16);
 	        $table->smallInteger('index')->default('0');
-	        $table->integer('cover')->nullable();
 	        $table->string('status',10)->default('normal');
      	});
      	//添加测试数据

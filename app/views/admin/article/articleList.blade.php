@@ -19,7 +19,7 @@
     </span>
     
 
-    <table width="600" class="anchor">
+    <table  class="anchor">
 
         <tr>
             <td>标题</td>

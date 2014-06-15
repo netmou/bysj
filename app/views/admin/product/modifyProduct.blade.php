@@ -7,7 +7,13 @@
             editor = K.create('textarea[name="body"]', {
                 resizeType: 1,
                 allowPreviewEmoticons: false,
-                allowImageUpload: true
+                allowImageUpload: true,
+                width : '500px',
+                minWidth: '500px',
+                items : [
+                        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                        'removeformat','|','subscript','superscript', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist','insertunorderedlist', '|', 'emoticons', 'image', 'link']
+
             });
         });
     </script>
@@ -138,13 +144,9 @@
         
         </script>
         <br />
-        <label for="image">外观：</label><img id="preview" src="{{asset($product->image)}}">
-        <input id="image" name="image" type="file" onchange="preview(this)" />
-        <script type="text/javascript">
-            function preview(){
-               //incomplete
-            }
-        </script>
+        <label for="image">外观：</label><img id="preview" width="360px" src="{{asset($product->image)}}">
+        <input id="image" name="image" type="file"  />
+        
         <br />
         <strong>请填写产品描述</strong>
         <textarea id="article" name="body">{{$product->desc}}</textarea>

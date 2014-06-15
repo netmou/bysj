@@ -19,7 +19,7 @@
     </span>
     
 
-    <table width="600" class="anchor">
+    <table class="anchor">
 
         <tr>
             <td>标题</td>
@@ -29,7 +29,7 @@
         </tr>
         @foreach($product as $item)
         <tr>
-            <td><a href="?id={{$item->id}}" title='浏览'>{{$item->title}}</a></td>
+            <td><a href="{{URL::to('product/show')}}?pid={{$item->id}}" target="_blank" title='浏览'>{{$item->title}}</a></td>
             <td>{{$item->type}}</td>
             <td>{{$item->date}}</td>
             <td><a href="{{URL::to('admin/product/edit')}}?modify={{$item->id}}">编辑</a></td>

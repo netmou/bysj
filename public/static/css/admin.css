@@ -180,5 +180,8 @@ html,body{
 #reply td{
     border:none;
 }
+#article{
+    width:200px;
+}
 
 

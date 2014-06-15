@@ -23,17 +23,19 @@ class ProductController extends Controller {
             $illustrate = json_decode(Request::input('illustrate'));
             $insert['illustrate'] = addslashes(serialize($illustrate)); // use stripslashes
             $insert['channel'] = $channel->id;
-            $file = Input::file('image');
-            if ($file->getError() != UPLOAD_ERR_OK) {
-                return Redirect::to('admin/operate/failure')->with(array('target' => 'admin/product/add', 'desc' => '图片上传失败！'));
+            if (Input::hasFile('image')){
+                $file = Input::file('image');
+                if ($file->getError() != UPLOAD_ERR_OK) {
+                    return Redirect::to('admin/operate/failure')->with(array('target' => 'admin/product/add', 'desc' => '图片上传失败！'));
+                }
+                $path = Config::get('system.upload') . date('Y/m/d/');
+                if (!file_exists($path)) {
+                    mkdir($path, 0666, true);
+                }
+                $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->move($path, $filename);
+                $insert['image'] = $path . $filename;
             }
-            $path = Config::get('system.upload') . date('Y/m/d/');
-            if (!file_exists($path)) {
-                mkdir($path, 0666, true);
-            }
-            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-            $file->move($path, $filename);
-            $insert['image'] = $path . $filename;
             $insert['category'] = Request::input('category');
             $insert['date'] = date('Y-m-d');
             DB::table('product')->insert($insert);
@@ -110,17 +112,20 @@ class ProductController extends Controller {
                 $illustrate = json_decode(Request::input('illustrate'));
                 $update['illustrate'] = addslashes(serialize($illustrate)); // use stripslashes
                 $update['channel'] = $channel->id;
-                $file = Input::file('image');
-                if ($file->getError() != UPLOAD_ERR_OK) {
-                    return Redirect::to('admin/operate/failure')->with(array('target' => 'admin/product/add', 'desc' => '图片上传失败！'));
+                //判断有没有上传文件：
+                if (Input::hasFile('image')){
+                    $file = Input::file('image');
+                    if ($file->getError() != UPLOAD_ERR_OK) {
+                        return Redirect::to('admin/operate/failure')->with(array('target' => 'admin/product/add', 'desc' => '图片上传失败！'));
+                    }
+                    $path = Config::get('system.upload') . date('Y/m/d/');
+                    if (!file_exists($path)) {
+                        mkdir($path, 0666, true);
+                    }
+                    $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+                    $file->move($path, $filename);
+                    $update['image'] = $path . $filename;
                 }
-                $path = Config::get('system.upload') . date('Y/m/d/');
-                if (!file_exists($path)) {
-                    mkdir($path, 0666, true);
-                }
-                $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move($path, $filename);
-                $update['image'] = $path . $filename;
                 $update['category'] = Request::input('category');
                 $update['date'] = date('Y-m-d');
                 DB::table('product')->where('id', $id)->update($update);

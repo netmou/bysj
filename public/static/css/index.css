@@ -67,6 +67,12 @@
     list-style:circle inside;
 }
 
+#sidebar #notice li{
+    margin:5px;
+    padding:2px;
+    border-bottom:dashed 1px #aaa;
+}
+
 #listbox dl{
     margin:2px 0px;
     padding:0px 0px;
@@ -165,8 +171,8 @@
     padding-bottom:5px;
 }
 .panel.show h3{
-    margin:5px;
-    padding:5px;
+    margin:5px 5px 0px;
+    padding:2px;
 }
 /*******************************product.page***************************************/
 #product span{
