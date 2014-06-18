@@ -1,21 +1,12 @@
-## Laravel PHP Framework
+我的毕业设计-新秀企业门户
+===================================
+  这是我在滨州学院本科的毕业设计.2014
 
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
+### 毕业设计简介  
+    课题是为新秀企业设计开发一个门户网站。网站能够很好地展示企业形象，展示企业的产品和新闻，方便客户留言。管理员能查看客户留   言并对其回复，能分类管理企业产品，新闻。此外超级管理员可以管理普通管理员，并细化它们的权限，实现模块化管理。网站运行时使    用MySQL作为数据库，Nginx作为Web服务器。系统使用Laravel框架，实现了页面与程序的分离。前台页面使用三层构架，其结构清晰，页面   简洁明了。
+    课题包括数据库及网站架构的设计与代码的编写。主要研究的是对网站的设计与实现，包括网站的页面制作，Laravel框架和模板使用等。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
-
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
-
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
-
-### Contributing To Laravel
-
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### 链接
+1.[My GitHub](http://github.com/netmou)<br />
+### 邮箱：leiyanfo@sina.com
