@@ -6,14 +6,12 @@
         KindEditor.ready(function(K) {
             editor = K.create('textarea[name="body"]', {
                 resizeType: 1,
-                allowPreviewEmoticons: false,
-                allowImageUpload: true,
-                width : '500px',
-                minWidth: '500px',
+                uploadJson : "{{asset('picture/upload')}}",
+                width : '600px',
+                minWidth: '800px',
                 items : [
                         'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-                        'removeformat','|','subscript','superscript', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist','insertunorderedlist', '|', 'emoticons', 'image', 'link']
-
+                        'removeformat','|','subscript','superscript', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist','insertunorderedlist', '|', 'emoticons', 'image', 'link','unlink']
             });
         });
     </script>

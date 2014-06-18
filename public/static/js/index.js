@@ -69,7 +69,7 @@ var focusImage=function(images) {
 
 $(function() {
     var color;
-    $(".art .panel li a").hover(function() {
+    $("ul.art li a").hover(function() {
         color = $(this).css("color");
         $(this).css("color", "red");
     }, function() {

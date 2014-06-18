@@ -132,12 +132,12 @@
     height:150px;
 }
 
-.art  ul{
+ul.art{
     padding: 2px 5px 5px;
     margin:2px 5px 5px;
     list-style-image:url(../images/cat2.png); 
 }
-.art li{
+ul.art li{
     font-size: 14px;
     border-bottom: 1px #aaa dashed;
     margin:0px 0px 0px 7px;

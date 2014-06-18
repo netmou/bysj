@@ -118,27 +118,7 @@ html,body{
     line-height: 30px;
 }
 
-/*********************************for laravel page mark style******************************/
-.pagination{
-    zoom:1;
-}
-.pagination:after{
-    content:".";
-    height:0px;
-    display:block;
-    clear: both;
-    visibility: hidden;
-}
-.pagination li{
-    padding:5px;
-    float: left;
-}
-.pagination .disabled{
-    color:#444;
-}
-.pagination .active{
-    color:red;
-}
+
 /*********************************below other inner page style*****************************/
 
 .msg{

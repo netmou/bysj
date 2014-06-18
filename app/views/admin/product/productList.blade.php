@@ -20,7 +20,6 @@
     
 
     <table class="anchor">
-
         <tr>
             <td>标题</td>
             <td>类别</td>

@@ -28,13 +28,13 @@
         </div>
     </div>
 </div>
-<div class="box art">
+<div class="box">
     <div class="head">  
         <div class="cpt">最新文章</div>
         <div class="more"><a href="article">更多&gt;&gt;</a></div>
     </div>
     <div class="panel">
-        <ul class="clr">
+        <ul class="clr art">
         @foreach($article as $item)
             <li>
                 <span class="lft"><a href="article/show?art={{$item->id}}">{{$item->title}}</a></span>

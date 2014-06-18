@@ -14,6 +14,7 @@
             </li>
         @endforeach
         </ul>
+        {{$products->links()}}
     </div>
 </div>
 @stop

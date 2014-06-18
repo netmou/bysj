@@ -74,6 +74,8 @@ Route::any('article', 'IndexController@article');
 Route::any('article/cat', 'IndexController@articleCat');
 Route::any('article/show', 'IndexController@showArticle');
 
+Route::any('picture/upload', 'UploadController@picture');
+
 Route::any('index/home', array('as'=>'index','uses'=>'IndexController@init'));
 // route without action
 Route::get('index', function(){

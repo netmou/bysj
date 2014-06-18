@@ -38,7 +38,8 @@ class IndexController extends BaseController{
 			$data=array();
 			$data['category']=DB::table('category')->where('id',$cat)->first();
 			$data['articles']=DB::table('article')
-			->where('category',$cat)->take(10)->get();
+			->where('category',$cat)->paginate(20);
+			$data['articles']->appends(array('cid' => $cat));
 			return View::make('articleCat')->with($data);
 		}
 		App::abort('500','UNKNONW ERROR');
@@ -62,7 +63,8 @@ class IndexController extends BaseController{
 			$data=array();
 			$data['category']=DB::table('category')->where('id',$cat)->first();
 			$data['products']=DB::table('product')
-			->where('category',$cat)->take(10)->get();
+			->where('category',$cat)->paginate(3);
+			$data['products']->appends(array('cid' => $cat));
 			return View::make('productCat')->with($data);
 		}
 		App::abort('500','UNKNONW ERROR');
