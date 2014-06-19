@@ -24,7 +24,7 @@
                 <li><a href="product/show?pid={{$item->id}}"><img src="{{$item->image}}" alt="{{$item->title}}"/></a></li>
             @endforeach
             </ul>
-            <ul class="clone"><!-- 不能删除的空标签,JS幻灯专用 --></ul>
+            <ul class="clone"><!-- 不能删除的空ul标签,JS幻灯专用 --></ul>
         </div>
     </div>
 </div>
