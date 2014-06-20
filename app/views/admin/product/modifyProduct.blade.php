@@ -42,10 +42,11 @@
             $('#category').find("option[value='{{$product->category}}']").attr("selected",true);
         </script>
         <br />
-        <label for="title">标题：</label>
-
+        <label for="title">产品标题：</label>
         <input id="title" name="title" type="text" value="{{$product->title}}" size="24" />
-
+        <br />
+        <label for="image">外观：</label><img id="preview" width="160px" src="{{asset($product->image)}}">
+        <input id="image" name="image" type="file"  />
         <br />
         <strong>请填写产品规格(双击单元格添加数据)</strong>
         <table id="dynamic">
@@ -139,16 +140,10 @@
             });
 
         })();
-        
         </script>
-        <br />
-        <label for="image">外观：</label><img id="preview" width="360px" src="{{asset($product->image)}}">
-        <input id="image" name="image" type="file"  />
-        
         <br />
         <strong>请填写产品描述</strong>
         <textarea id="article" name="body">{{$product->desc}}</textarea>
-
         <input id="addproduct" type="submit" value="保存修改" />
     </form>
 @stop

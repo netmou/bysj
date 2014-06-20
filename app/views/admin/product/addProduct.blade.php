@@ -39,10 +39,11 @@
         @endforeach
         </select>
         <br />
-        <label for="title">标题：</label>
-
+        <label for="title">产品标题：</label>
         <input id="title" name="title" type="text" size="24" />
-
+        <br />
+        <label for="image">产品外观：</label>
+        <input id="image" name="image" type="file" />
         <br />
         <strong>请填写产品规格(双击单元格添加数据)</strong>
         <table id="dynamic">
@@ -142,13 +143,8 @@
         
         </script>
         <br />
-        <label for="image">外观：</label>
-        <input id="image" name="image" type="file" />
-        <br />
         <strong>请填写产品描述</strong>
         <textarea id="article" name="body"></textarea>
-
-
         <input id="addproduct" type="submit" value="添加产品" />
     </form>
 @stop

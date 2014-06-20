@@ -41,21 +41,24 @@
                     <a href="#"><img src="{{asset('static/images/logo.png')}}" alt="新秀的logo" /></a>
                 </div>
                 <div id="search" class="rgt">
+                <!--
                     <form id="form" action="http://www.baidu.com/baidu" target="_blank">
-                       
+                -->
+                <form id="form" action="http://www.baidu.com/baidu" target="_blank">
                         <input name="word" type="text" size="12"/>
                         
                         <input type="image" src="{{asset('static/images/search.png')}}" onclick="innerSite()" alt="search">
                         <input type="hidden" value="utf-8" name="ie">
                         <input type="hidden" value="3" name="cl">
-                        <input id="search_tn" type="hidden" value="sitehao123" name="tn">
+                        <input type="hidden" value="xinxiu" name="tn">
+                        <input type="hidden" value="2097152" name="ct">
+                        <input type="hidden" value="{{Config::get('system.domain')}}" name="si">
                     </form>
                     <script type="text/javascript">
                         function innerSite(){
-                            var value=$("#search input[name='word']").val()+" site:{{Config::get('system.domain')}}"
-                            $("#search input[name='word']").val(value);
-                            $('form').submit();
+                            $('#form').submit();
                         }
+                    
                     </script>
                 </div>
             </div>
