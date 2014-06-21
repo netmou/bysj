@@ -31,8 +31,12 @@
             <div id="menubar" class="abs">
             @yield('menuList')
             </div>
-            <div id="logout" class="abs">
-                <span>你好：{{Session::get('user','test')}}</span>&nbsp;&nbsp;<a href="{{URL::to('admin/login')}}" onclick="return window.confirm('确定要注销用户吗？');"><img src="{{asset('static/images/exit.png')}}" alt="exit"></a>
+            <div id="logout" class="abs anchor">
+                <span>你好：{{Session::get('user','test')}}</span>&nbsp;&nbsp;
+                <a href="{{asset('/')}}" target="_blank">系统首页</a>
+                <a href="{{URL::to('admin/login')}}" onclick="return window.confirm('确定要注销用户吗？');">
+                    <img src="{{asset('static/images/exit.png')}}" alt="exit">
+                </a> 
             </div>
         </div>
         <div id="content" class="clr cnt">

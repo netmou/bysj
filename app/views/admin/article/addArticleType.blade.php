@@ -28,7 +28,7 @@
         <input id="title" name="title" type="text" size="36" />
          <br />
         <label for="symbol">标识：</label>
-        <input id="symbol" name="symbol" type="text" size="36" />
+        <input id="symbol" name="symbol" type="text" size="36" />【限制为英文字符和数字，无空格】
         <br />
         <input type="submit" value="添加分类" />
     </form>

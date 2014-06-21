@@ -23,6 +23,9 @@
         </select>
         （多选【ctrl+右击】）
         <br />
+        <script>
+            $("#ctype option:first").attr("selected",true);
+        </script>
         <strong>请填写必填信息</strong>
         <br />
         <label for="title">昵称：</label>

@@ -64,7 +64,7 @@ App::error(function(Exception $exception, $code)
 
 App::down(function()
 {
-	return Response::make("Be right back!", 503);
+	return Response::make("系统正在维护，请稍后!", 503);
 });
 
 /*

@@ -143,7 +143,7 @@
         
         </script>
         <br />
-        <strong>请填写产品描述</strong>
+        <strong>请填写产品描述（请尽量使用本地图片）</strong>
         <textarea id="article" name="body"></textarea>
         <input id="addproduct" type="submit" value="添加产品" />
     </form>

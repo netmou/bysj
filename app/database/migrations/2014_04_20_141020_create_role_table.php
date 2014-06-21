@@ -40,7 +40,7 @@ class CreateRoleTable extends Migration {
             'rights' => 'article'
         ));
         DB::table('role')->insert(array(
-            'title' => '产品用户',
+            'title' => '产品角色',
             'type' => 'admin',
             'rights' => 'product'
         ));
